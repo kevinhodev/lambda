@@ -5,3 +5,30 @@ body {
   overflow-x: hidden;
   background-color: var(--backgroundColor);
 }
+
+.app {
+  width: 100%;
+  position: relative;
+  background-color: var(--backgroundColor);
+  transition-property: background-color;
+  transition-duration: var(--durationM);
+  transition-timing-function: ease;
+  outline: none;
+  display: grid;
+  grid-template: 100% / 100%;
+}
+
+.app__page {
+  opacity: 0;
+  grid-area: 1 / 1;
+  transition-property: opacity;
+  transition-duration: var(--durationS);
+  transition-timing-function: ease;
+  min-height: 100vh;
+}
+
+.app__page--entered {
+  transition-duration: var(--durationL);
+  transition-delay: var(--durationXS);
+  opacity: 1;
+}

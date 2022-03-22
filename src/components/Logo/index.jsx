@@ -4,7 +4,7 @@ import "./index.css";
 
 const Logo = () => {
   return (
-    <Transition in timeout={0}>
+    <Transition in timeout={1000}>
       {(status) => (
         <div className={classNames("logo", `logo--${status}`)}>
           <svg
