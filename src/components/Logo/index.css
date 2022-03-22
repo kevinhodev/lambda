@@ -11,22 +11,44 @@
   transition-timing-function: ease;
 }
 
+@media (max-width: 696px) {
+  .logo {
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 .logo--entered {
   opacity: 1;
 }
 
 .logo__svg {
+  stroke-width: 3;
   stroke-dasharray: 244;
   stroke-dashoffset: 244;
   animation-name: dash;
-  animation-duration: 5s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+}
+
+@media (max-width: 696px) {
+  .logo__svg {
+    width: 40px;
+    height: 30px;
+  }
 }
 
 .logo__title {
   color: var(--colorTextTitle);
   font-weight: 400;
+}
+
+@media (max-width: 696px) {
+  .logo__title {
+    display: none;
+  }
 }
 
 /* Animações */

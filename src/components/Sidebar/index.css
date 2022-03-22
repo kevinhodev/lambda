@@ -9,3 +9,9 @@
   flex-direction: column;
   z-index: var(--zIndexSidebar);
 }
+
+@media (max-width: 696px) {
+  .sidebar {
+    width: var(--space3XL);
+  }
+}
