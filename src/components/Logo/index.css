@@ -1,0 +1,37 @@
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: var(--spaceL);
+  left: var(--spaceL);
+  gap: var(--spaceS);
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: var(--durationM);
+  transition-timing-function: ease;
+}
+
+.logo--entered {
+  opacity: 1;
+}
+
+.logo__svg {
+  stroke-dasharray: 244;
+  stroke-dashoffset: 244;
+  animation-name: dash;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.logo__title {
+  color: var(--colorTextTitle);
+  font-weight: 400;
+}
+
+/* Animações */
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

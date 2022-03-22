@@ -1,0 +1,22 @@
+:root {
+  --spaceOuter: 64px;
+  --spaceXS: 4px;
+  --spaceS: 8px;
+  --spaceM: 16px;
+  --spaceL: 24px;
+  --spaceXL: 32px;
+  --space2XL: 48px;
+  --space3XL: 64px;
+  --space4XL: 96px;
+  --space5XL: 128px;
+
+  /* z-index */
+  --zIndexSidebar: 100;
+
+  /* Animações e Transições */
+  --durationXS: 200ms;
+  --durationS: 300ms;
+  --durationM: 400ms;
+  --durationL: 600ms;
+  --durationXL: 800ms;
+}
