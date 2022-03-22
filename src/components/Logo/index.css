@@ -3,8 +3,8 @@
   align-items: center;
   position: relative;
   top: var(--spaceL);
-  left: var(--spaceL);
   gap: var(--spaceS);
+  left: calc(var(--spaceS) * -2);
   opacity: 0;
   transition-property: opacity;
   transition-duration: var(--durationM);

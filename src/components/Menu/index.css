@@ -1,0 +1,21 @@
+.menu {
+  position: relative;
+  display: inline-flex;
+  list-style-type: none;
+  top: var(--spaceOuter);
+}
+
+@media (max-width: 696px) {
+  .menu {
+    height: 50%;
+    justify-content: center;
+  }
+}
+
+.menu-vertical {
+  flex-direction: column;
+}
+
+.menu-horizontal {
+  flex-direction: row;
+}
