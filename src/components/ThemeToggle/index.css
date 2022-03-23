@@ -79,8 +79,8 @@
 
 @media (max-width: 696px) {
   .theme-toggle__circle {
-    height: 70%;
-    width: 60%;
+    height: 80%;
+    width: 70%;
   }
 }
 
@@ -98,6 +98,11 @@
 
 .theme-toggle--dark .theme-toggle__circle {
   transform: translateX(20px);
+}
+
+@media (max-width: 696px) {
+  .theme-toggle--dark .theme-toggle__circle {
+  }
 }
 
 .theme-toggle--light .theme-toggle__circle {
