@@ -2,11 +2,13 @@
   position: relative;
   display: inline-flex;
   list-style-type: none;
-  top: var(--spaceOuter);
+  top: calc(var(--spaceOuter) * 1.5);
+  left: calc(var(--spaceS) * -1);
 }
 
 @media (max-width: 696px) {
   .menu {
+    left: 0;
     height: 50%;
     justify-content: center;
   }

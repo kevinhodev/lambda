@@ -1,0 +1,125 @@
+.theme-toggle-wrapper {
+  position: fixed;
+  bottom: var(--spaceXL);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: var(--spaceL);
+}
+
+@media (max-width: 696px) {
+  .theme-toggle-wrapper {
+    flex-direction: column;
+  }
+}
+
+.theme-toggle-wrapper span {
+  color: var(--colorTextTitle);
+  font-size: 0.85rem;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background-color: rgb(59, 59, 226);
+  transition-property: background-color;
+  transition-duration: var(--durationM);
+  transition-timing-function: ease-in;
+}
+
+@media (max-width: 696px) {
+  .theme-toggle {
+    flex-direction: column;
+    justify-content: center;
+    align-items: initial;
+    transform: rotateZ(90deg);
+  }
+}
+
+.theme-toggle::after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  transition-property: background-color;
+  transition-duration: var(--durationM);
+  transition-timing-function: ease-in;
+}
+
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  transition-property: background-color;
+  transition-duration: var(--durationM);
+  transition-timing-function: ease-in;
+}
+
+.theme-toggle__circle {
+  position: absolute;
+  height: 60%;
+  width: 70%;
+  transform: translateX(0);
+  border-radius: 100%;
+  background-color: #fff;
+  z-index: 1;
+  transition-property: transform;
+  transition-duration: var(--durationS);
+  transition-timing-function: ease-in;
+}
+
+@media (max-width: 696px) {
+  .theme-toggle__circle {
+    height: 70%;
+    width: 60%;
+  }
+}
+
+.theme-toggle--dark,
+.theme-toggle--dark::after,
+.theme-toggle--dark::before {
+  background-color: rgb(59, 59, 226);
+}
+
+.theme-toggle--light,
+.theme-toggle--light::after,
+.theme-toggle--light::before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.theme-toggle--dark .theme-toggle__circle {
+  transform: translateX(20px);
+}
+
+.theme-toggle--light .theme-toggle__circle {
+  transform: translateX(-10px);
+}
+
+.dark-icon {
+  position: absolute;
+  transform: translateX(-10px);
+  fill: #fff;
+}
+
+.light-icon {
+  position: absolute;
+  transform: translateX(20px);
+  fill: #fff;
+  z-index: 1;
+}
+
+.dark-label.active {
+  font-weight: 600;
+}
+
+.light-label.active {
+  font-weight: 600;
+}

@@ -1,7 +1,8 @@
 import Logo from "../Logo";
 import Menu from "../Menu";
-import { menuData } from "../Menu/menuData";
+import ThemeToggle from "../ThemeToggle";
 import MenuItem from "../MenuItem";
+import { menuData } from "../Menu/menuData";
 import "./index.css";
 
 const Sidebar = () => {
@@ -13,6 +14,7 @@ const Sidebar = () => {
           <MenuItem key={item.text} text={item.text} icon={item.icon} />
         ))}
       </Menu>
+      <ThemeToggle />
     </aside>
   );
 };
