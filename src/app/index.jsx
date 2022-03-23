@@ -5,11 +5,14 @@ import "./reset.css";
 import "./index.css";
 import "./base.css";
 import classNames from "classnames";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const App = () => {
+  const themeType = useLocalStorage("theme", "dark");
+
   return (
     <>
-      <ThemeProvider>
+      <ThemeProvider themeType={themeType}>
         <TransitionGroup component="main" className="app">
           <Transition timeout={300}>
             {(status) => (

@@ -1,15 +1,22 @@
-import { createContext, useEffect } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { theme } from "./theme";
 
 const ThemeContext = createContext();
 
-const ThemeProvider = ({ children }) => {
-  const currentTheme = "dark";
+const ThemeProvider = ({ children, themeType }) => {
+  const [currentTheme, setCurrentTheme] = useState(themeType);
 
   useEffect(() => {
+    localStorage.setItem("theme", currentTheme);
+    document.body.classList.remove("dark", "light");
     document.body.classList.add(currentTheme);
   }, [currentTheme]);
+
+  const themeStyles = `
+  .${currentTheme} {
+    ${generateCustomCSSProperties(theme[currentTheme])}
+  }`;
 
   return (
     <>
@@ -22,7 +29,7 @@ const ThemeProvider = ({ children }) => {
         />
         <style>{themeStyles}</style>
       </Helmet>
-      <ThemeContext.Provider value={currentTheme}>
+      <ThemeContext.Provider value={{ currentTheme, setCurrentTheme }}>
         {children}
       </ThemeContext.Provider>
     </>
@@ -35,13 +42,5 @@ const generateCustomCSSProperties = (theme) => {
     .map((key) => `--${key}: ${theme[key]};`)
     .join("\n");
 };
-
-const themeStyles = `
-  .dark {
-  ${generateCustomCSSProperties(theme.dark)}
-}
-  .light {
-  ${generateCustomCSSProperties(theme.light)}
-}`;
 
 export { ThemeProvider, ThemeContext };
