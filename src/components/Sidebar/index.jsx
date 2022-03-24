@@ -26,6 +26,9 @@ const Sidebar = ({ hideable = true }) => {
       sidebar.style.transform = `translateX(${
         matrix.m41 + touchOffsetX.current * 0.05
       }px)`;
+
+      if (matrix.m41 > 0) sidebar.style.transform = "translateX(0)";
+
       matrix.m41 === 0
         ? (touchAreaRef.current.style.zIndex = "50")
         : (touchAreaRef.current.style.zIndex = "100");
