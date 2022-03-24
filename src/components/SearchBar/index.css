@@ -11,6 +11,13 @@
   padding: 0 var(--spaceS);
 }
 
+@media (max-width: 696px) {
+  .search-bar {
+    top: 0;
+    left: 0;
+  }
+}
+
 .search-bar__icon {
   color: var(--text);
   height: 25px;
