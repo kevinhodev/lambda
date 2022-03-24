@@ -41,7 +41,7 @@
 }
 
 .logo__title {
-  color: var(--colorTextTitle);
+  color: var(--text);
   font-weight: 400;
 }
 

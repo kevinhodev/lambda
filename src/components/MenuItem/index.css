@@ -16,7 +16,7 @@
   width: 1px;
   height: 100%;
   background-color: var(--accent);
-  box-shadow: 0 0 7px #fff, 0 0 10px #fff;
+  box-shadow: 0 0 7px var(--text), 0 0 10px var(--text);
   transform: scaleY(0);
   transform-origin: bottom;
   transition-property: transform;
@@ -39,16 +39,16 @@
 .menu__item-icon {
   height: 20px;
   width: 20px;
-  color: #fff;
+  color: var(--text);
 }
 
 .menu__item:hover .menu__item-icon,
 .menu__item:active .menu__item-icon {
-  color: rgb(126, 202, 228);
+  color: var(--accent);
 }
 
 .menu__item-link {
-  color: var(--colorTextTitle);
+  color: var(--text);
 }
 
 @media (max-width: 696px) {

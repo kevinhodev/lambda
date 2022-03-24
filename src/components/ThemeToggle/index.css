@@ -15,7 +15,7 @@
 }
 
 .theme-toggle-wrapper span {
-  color: var(--colorTextTitle);
+  color: var(--text);
   font-size: 0.85rem;
 }
 
@@ -25,7 +25,7 @@
   position: relative;
   height: 30px;
   width: 30px;
-  background-color: rgb(59, 59, 226);
+  background-color: var(--accent);
   transition-property: background-color;
   transition-duration: var(--durationM);
   transition-timing-function: ease-in;
@@ -87,13 +87,13 @@
 .theme-toggle--dark,
 .theme-toggle--dark::after,
 .theme-toggle--dark::before {
-  background-color: rgb(59, 59, 226);
+  background-color: var(--accent);
 }
 
 .theme-toggle--light,
 .theme-toggle--light::after,
 .theme-toggle--light::before {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--accent);
 }
 
 .theme-toggle--dark .theme-toggle__circle {

@@ -3,13 +3,13 @@ body {
   text-rendering: optimizeLegibility;
   width: 100vw;
   overflow-x: hidden;
-  background-color: var(--backgroundColor);
+  background-color: var(--primary);
 }
 
 .app {
   width: 100%;
   position: relative;
-  background-color: var(--backgroundColor);
+  background-color: var(--primary);
   transition-property: background-color;
   transition-duration: var(--durationM);
   transition-timing-function: ease;
