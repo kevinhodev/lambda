@@ -28,10 +28,6 @@ const Sidebar = ({ hideable = true }) => {
       }px)`;
 
       if (matrix.m41 > 0) sidebar.style.transform = "translateX(0)";
-
-      matrix.m41 === 0
-        ? (touchAreaRef.current.style.zIndex = "50")
-        : (touchAreaRef.current.style.zIndex = "100");
     } else if (
       matrix.m41 > -67 &&
       previousTouchOffsetX.current > touchOffsetX.current
