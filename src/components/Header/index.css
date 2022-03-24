@@ -27,6 +27,7 @@
 @media (max-width: 696px) {
   .personal-info {
     top: 0;
+    right: var(--spaceXL);
     gap: var(--spaceL);
   }
 }
