@@ -12,6 +12,10 @@ const Sidebar = ({ hideable = true }) => {
   const previousTouchOffsetX = useRef(0);
   const touchOffsetX = useRef(0);
 
+  useEffect(() => {
+    console.log(getComputedStyle(sidebarRef.current).transform);
+  }, []);
+
   const moveSidebar = (sidebar, event) => {
     const style = getComputedStyle(sidebar);
     const matrix = new DOMMatrix(style.transform);
@@ -20,7 +24,7 @@ const Sidebar = ({ hideable = true }) => {
     touchOffsetX.current = event.targetTouches[0].clientX;
 
     if (
-      matrix.m41 < 0 &&
+      matrix.m41 < -1 &&
       previousTouchOffsetX.current <= touchOffsetX.current
     ) {
       sidebar.style.transform = `translateX(${

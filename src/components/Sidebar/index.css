@@ -27,6 +27,5 @@
 @media (max-width: 696px) {
   .sidebar {
     width: var(--space3XL);
-    transform: translateX(-100%);
   }
 }
