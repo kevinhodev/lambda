@@ -11,9 +11,7 @@
 @media (max-width: 696px) {
   .header {
     left: var(--space3XL);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
   }
 }
 
@@ -28,7 +26,8 @@
 
 @media (max-width: 696px) {
   .personal-info {
-    right: 0;
+    top: 0;
+    gap: var(--spaceL);
   }
 }
 
