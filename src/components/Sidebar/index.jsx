@@ -31,7 +31,7 @@ const Sidebar = ({ hideable = true }) => {
         matrix.m41 + touchOffsetX.current * 0.05
       }px)`;
 
-      if (matrix.m41 > 0) sidebar.style.transform = "translateX(0)";
+      if (matrix.m41 > 0) sidebar.style.transform = "none";
     } else if (
       matrix.m41 > -67 &&
       previousTouchOffsetX.current > touchOffsetX.current
