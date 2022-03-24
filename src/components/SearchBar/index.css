@@ -13,6 +13,7 @@
 
 @media (max-width: 696px) {
   .search-bar {
+    margin: var(--spaceS);
     top: 0;
     left: 0;
   }

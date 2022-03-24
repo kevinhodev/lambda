@@ -56,11 +56,6 @@
   .icon-profile {
     height: 35px;
     width: 35px;
-  }
-}
-
-@media (max-width: 696px) {
-  .icon-profile {
     margin-left: 0;
   }
 }
