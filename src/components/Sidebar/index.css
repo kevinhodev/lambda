@@ -12,8 +12,21 @@
   overflow-y: hidden;
 }
 
+.touch-area {
+  /* Hack para o addEventListener funcionar */
+  background: transparent url(../../assets/images/clear.gif) repeat;
+  /* -------------------------------------- */
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  width: var(--space3XL);
+}
+
 @media (max-width: 696px) {
   .sidebar {
     width: var(--space3XL);
+    transform: translateX(-100%);
   }
 }
