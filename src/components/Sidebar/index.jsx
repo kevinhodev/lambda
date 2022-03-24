@@ -19,8 +19,6 @@ const Sidebar = ({ hideable = true }) => {
     previousTouchOffsetX.current = touchOffsetX.current;
     touchOffsetX.current = event.targetTouches[0].clientX;
 
-    console.log(previousTouchOffsetX.current, touchOffsetX.current);
-
     if (
       matrix.m41 < 0 &&
       previousTouchOffsetX.current <= touchOffsetX.current
@@ -28,6 +26,9 @@ const Sidebar = ({ hideable = true }) => {
       sidebar.style.transform = `translateX(${
         matrix.m41 + touchOffsetX.current * 0.05
       }px)`;
+      matrix.m41 === 0
+        ? (touchAreaRef.current.style.zIndex = "50")
+        : (touchAreaRef.current.style.zIndex = "100");
     } else if (
       matrix.m41 > -67 &&
       previousTouchOffsetX.current > touchOffsetX.current
