@@ -1,5 +1,4 @@
 .header {
-  background-color: var(--primary);
   position: fixed;
   right: 0;
   left: calc(var(--space5XL) * 1.5);
