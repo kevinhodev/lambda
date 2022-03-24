@@ -42,9 +42,6 @@ const Sidebar = ({ hideable = true }) => {
     touchAreaRef.current.addEventListener("touchmove", (event) =>
       moveSidebar(sidebarRef.current, event)
     );
-
-    return () =>
-      touchAreaRef.current.removeEventListener("touchmove", moveSidebar);
   }, []);
 
   return (
