@@ -107,20 +107,17 @@
 .dark-icon {
   position: absolute;
   transform: translateX(-10px);
-  fill: #fff;
+  fill: var(--text);
 }
 
 .light-icon {
   position: absolute;
   transform: translateX(20px);
-  fill: #fff;
+  fill: var(--text);
   z-index: 1;
 }
 
-.dark-label.active {
-  font-weight: 600;
-}
-
+.dark-label.active,
 .light-label.active {
   font-weight: 600;
 }
