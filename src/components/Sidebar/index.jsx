@@ -39,7 +39,7 @@ const Sidebar = ({ hideable = true }) => {
   const handleCancel = (sidebar) => {
     const style = getComputedStyle(sidebar);
     const matrix = new DOMMatrix(style.transform);
-
+    console.log("d");
     if (matrix.m41 > 0) sidebar.style.transform = "none";
   };
 
