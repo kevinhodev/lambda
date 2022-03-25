@@ -35,6 +35,7 @@
 }
 
 .left-arrow {
+  display: none;
   position: absolute;
   bottom: var(--spaceM);
 }
@@ -43,4 +44,10 @@
   height: 30px;
   height: 30px;
   color: var(--text);
+}
+
+@media (max-width: 696px) {
+  .left-arrow {
+    display: block;
+  }
 }
