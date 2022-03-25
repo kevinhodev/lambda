@@ -10,7 +10,7 @@
 @media (max-width: 696px) {
   .theme-toggle-wrapper {
     flex-direction: column;
-    bottom: var(--space2XL);
+    bottom: var(--space3XL);
   }
 }
 

@@ -12,6 +12,10 @@
   overflow-y: hidden;
 }
 
+.sidebar--close {
+  transition: transform var(--durationM) ease-out;
+}
+
 .touch-area {
   /* Hack para o addEventListener funcionar */
   background: transparent url(../../assets/images/clear.gif) repeat;
@@ -20,13 +24,23 @@
   left: 0;
   top: 0;
   bottom: 0;
-  z-index: 200;
+  z-index: 100;
   width: var(--space3XL);
 }
 
 @media (max-width: 696px) {
   .sidebar {
-    transform: translateX(-100%);
     width: var(--space3XL);
   }
+}
+
+.left-arrow {
+  position: absolute;
+  bottom: var(--spaceM);
+}
+
+.left-arrow svg {
+  height: 30px;
+  height: 30px;
+  color: var(--text);
 }
