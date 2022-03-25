@@ -10,10 +10,12 @@
   align-items: center;
   z-index: var(--zIndexSidebar);
   overflow-y: hidden;
+  transition: background-color var(--durationM) ease-in;
 }
 
 .sidebar--close {
-  transition: transform var(--durationM) ease-out;
+  transition: background-color var(--durationM) ease-in,
+    transform var(--durationM) ease-out;
 }
 
 .touch-area {

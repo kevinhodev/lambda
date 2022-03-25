@@ -24,13 +24,14 @@
 }
 
 .logo__svg {
-  stroke-width: 3;
+  stroke-width: 2.5;
   stroke-dasharray: 244;
   stroke-dashoffset: 244;
   animation-name: dash;
   animation-duration: 6s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
+  color: var(--text);
 }
 
 @media (max-width: 696px) {
