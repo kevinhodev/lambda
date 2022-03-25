@@ -21,14 +21,11 @@ const Sidebar = ({ hideable = true }) => {
     const matrix = new DOMMatrix(style.transform);
 
     previousTouchOffsetX.current = touchOffsetX.current;
-    touchOffsetX.current = event.targetTouches[0]?.clientX;
+    touchOffsetX.current = event.targetTouches[0].clientX;
 
-    console.log("matrix: ", matrix.m41, "touch:", touchOffsetX.current);
+    const moveIsToRight = previousTouchOffsetX.current <= touchOffsetX.current;
 
-    if (
-      matrix.m41 < 0 &&
-      previousTouchOffsetX.current <= touchOffsetX.current
-    ) {
+    if (matrix.m41 < 0 && moveIsToRight) {
       sidebar.style.transform = `translateX(${clamp(
         matrix.m41 + touchOffsetX.current * 0.5,
         -70,
