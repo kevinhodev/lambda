@@ -17,7 +17,7 @@ const Sidebar = ({ hideable = true }) => {
     const matrix = new DOMMatrix(style.transform);
 
     previousTouchOffsetX.current = touchOffsetX.current;
-    touchOffsetX.current = event.targetTouches[0].clientX;
+    touchOffsetX.current = event.targetTouches[0]?.clientX;
 
     if (
       matrix.m41 < -1 &&
@@ -26,8 +26,6 @@ const Sidebar = ({ hideable = true }) => {
       sidebar.style.transform = `translateX(${
         matrix.m41 + touchOffsetX.current * 0.05
       }px)`;
-
-      if (matrix.m41 > 0) sidebar.style.transform = "none";
     } else if (
       matrix.m41 > -67 &&
       previousTouchOffsetX.current > touchOffsetX.current
@@ -38,13 +36,21 @@ const Sidebar = ({ hideable = true }) => {
     }
   };
 
+  const handleCancel = (sidebar) => {
+    const style = getComputedStyle(sidebar);
+    const matrix = new DOMMatrix(style.transform);
+
+    if (matrix.m41 > 0) sidebar.style.transform = "none";
+  };
+
   useEffect(() => {
     touchAreaRef.current.addEventListener("touchmove", (event) =>
       moveSidebar(sidebarRef.current, event)
     );
 
-    touchAreaRef.current.addEventListener("touchend", (event) =>
-      moveSidebar(sidebarRef.current, event)
+    touchAreaRef.current.addEventListener(
+      "touchend",
+      handleCancel(sidebarRef.current)
     );
   }, []);
 
