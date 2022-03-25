@@ -20,10 +20,12 @@ const Sidebar = ({ hideable = true }) => {
     const matrix = new DOMMatrix(style.transform);
 
     previousTouchOffsetX.current = touchOffsetX.current;
-    touchOffsetX.current = clamp(event.targetTouches[0]?.clientX, -67, 0);
+    touchOffsetX.current = clamp(event.targetTouches[0]?.clientX, -70, 70);
+
+    console.log("touchOffset: ", touchOffsetX.current, "matrix: ", matrix.m41);
 
     if (
-      matrix.m41 < -1 &&
+      matrix.m41 < 0 &&
       previousTouchOffsetX.current <= touchOffsetX.current
     ) {
       sidebar.style.transform = `translateX(${
@@ -34,7 +36,7 @@ const Sidebar = ({ hideable = true }) => {
       previousTouchOffsetX.current > touchOffsetX.current
     ) {
       sidebar.style.transform = `translateX(${
-        matrix.m41 - touchOffsetX.current * 0.05
+        matrix.m41 - Math.abs(touchOffsetX.current) * 0.05
       }px)`;
     }
   };
