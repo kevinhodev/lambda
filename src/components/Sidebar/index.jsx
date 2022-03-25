@@ -4,6 +4,7 @@ import Menu from "../Menu";
 import MenuItem from "../MenuItem";
 import ThemeToggle from "../ThemeToggle";
 import { menuData } from "../Menu/menuData";
+import clamp from "../../utils/math";
 import "./index.css";
 
 const Sidebar = ({ hideable = true }) => {
@@ -19,7 +20,7 @@ const Sidebar = ({ hideable = true }) => {
     const matrix = new DOMMatrix(style.transform);
 
     previousTouchOffsetX.current = touchOffsetX.current;
-    touchOffsetX.current = Math.floor(event.targetTouches[0]?.clientX);
+    touchOffsetX.current = clamp(event.targetTouches[0]?.clientX, -67, 0);
 
     if (
       matrix.m41 < -1 &&
@@ -42,7 +43,6 @@ const Sidebar = ({ hideable = true }) => {
     const style = getComputedStyle(sidebar);
     const matrix = new DOMMatrix(style.transform);
     if (matrix.m41 > 0) sidebar.style.transform = "none";
-    console.log(matrix);
   };
 
   useEffect(() => {
