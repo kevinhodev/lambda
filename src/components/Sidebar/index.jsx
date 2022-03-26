@@ -23,9 +23,9 @@ const Sidebar = ({ hideable = true }) => {
     previousTouchOffsetX.current = touchOffsetX.current;
     touchOffsetX.current = event.targetTouches[0].clientX;
 
-    const moveIsToRight = previousTouchOffsetX.current <= touchOffsetX.current;
+    const isMoveToRight = previousTouchOffsetX.current <= touchOffsetX.current;
 
-    if (matrix.m41 < 0 && moveIsToRight) {
+    if (matrix.m41 < 0 && isMoveToRight) {
       sidebar.style.transform = `translateX(${clamp(
         matrix.m41 + touchOffsetX.current * 0.5,
         -70,
@@ -40,10 +40,11 @@ const Sidebar = ({ hideable = true }) => {
   };
 
   useEffect(() => {
-    touchAreaRef.current.addEventListener("touchmove", (event) =>
-      moveSidebar(sidebarRef.current, event)
-    );
-  }, []);
+    hideable &&
+      touchAreaRef.current.addEventListener("touchmove", (event) =>
+        moveSidebar(sidebarRef.current, event)
+      );
+  }, [hideable]);
 
   return (
     <>
@@ -59,12 +60,14 @@ const Sidebar = ({ hideable = true }) => {
           ))}
         </Menu>
         <ThemeToggle />
-        <div
-          className="left-arrow"
-          onClick={() => closeSidebar(sidebarRef.current)}
-        >
-          <LeftArrow />
-        </div>
+        {hideable && (
+          <div
+            className="left-arrow"
+            onClick={() => closeSidebar(sidebarRef.current)}
+          >
+            <LeftArrow />
+          </div>
+        )}
       </aside>
     </>
   );

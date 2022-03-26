@@ -1,11 +1,12 @@
 import { Transition, TransitionGroup } from "react-transition-group";
+import classNames from "classnames";
 import { ThemeProvider } from "../components/ThemeProvider";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import "./reset.css";
 import "./index.css";
 import "./base.css";
-import classNames from "classnames";
+
 import useLocalStorage from "../hooks/useLocalStorage";
 
 const App = () => {

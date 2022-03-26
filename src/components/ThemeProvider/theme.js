@@ -8,10 +8,10 @@ const dark = {
 
 const light = {
   themeType: "light",
-  primary: "#f7f7f9",
-  secondary: "#dfd9cf",
+  primary: "#fff",
+  secondary: "#f7f7f7",
   text: "#121111",
-  accent: "#ad7777"
+  accent: "#bcaffb"
 };
 
 export const theme = {

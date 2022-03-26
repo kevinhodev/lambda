@@ -11,6 +11,12 @@
   padding: 0 var(--spaceS);
 }
 
+@media (max-width: 1024px) {
+  .search-bar {
+    width: calc(var(--space5XL) * 1.8);
+  }
+}
+
 @media (max-width: 696px) {
   .search-bar {
     display: none;
