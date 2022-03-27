@@ -6,6 +6,7 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 
 import Settings from "../pages/Settings";
+import Dashboard from "../pages/Dashboard";
 
 import "./reset.css";
 import "./index.css";
@@ -20,14 +21,15 @@ const App = () => {
     <>
       <ThemeProvider themeType={currentTheme}>
         <TransitionGroup component="main" className="app">
-          <Transition timeout={300}>
+          <Transition timeout={10000}>
             {(status) => (
               <div className={classNames("app__page", `app__page--${status}`)}>
                 <Sidebar />
                 <Header />
                 <div className="content">
-                  <Routes>
+                  <Routes className>
                     <Route path="settings" element={<Settings />} />
+                    <Route path="dashboard" element={<Dashboard />} />
                   </Routes>
                 </div>
               </div>
