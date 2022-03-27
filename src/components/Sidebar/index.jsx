@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
 import Logo from "../Logo";
 import Menu from "../Menu";
-import MenuItem from "../MenuItem";
 import ThemeToggle from "../ThemeToggle";
 import { ReactComponent as LeftArrow } from "../../assets/icons/left-arrow.svg";
-import { menuData } from "../Menu/menuData";
 import clamp from "../../utils/math";
 import "./index.css";
 import classNames from "classnames";
@@ -16,8 +13,6 @@ const Sidebar = ({ hideable = true }) => {
   const sidebarRef = useRef();
   const previousTouchOffsetX = useRef(0);
   const touchOffsetX = useRef(0);
-
-  const location = useLocation();
 
   const moveSidebar = (sidebar, event) => {
     const style = getComputedStyle(sidebar);
@@ -49,11 +44,6 @@ const Sidebar = ({ hideable = true }) => {
       );
   }, [hideable]);
 
-  const isMatch = (pathname) => {
-    if (!pathname) return false;
-    return pathname === location.pathname;
-  };
-
   return (
     <>
       {hideable && <div className="touch-area" ref={touchAreaRef}></div>}
@@ -62,17 +52,7 @@ const Sidebar = ({ hideable = true }) => {
         ref={sidebarRef}
       >
         <Logo />
-        <Menu>
-          {menuData.map((item) => (
-            <MenuItem
-              aria-current={isMatch(item.href) ? "page" : ""}
-              key={item.text}
-              text={item.text}
-              icon={item.icon}
-              href={item.href}
-            />
-          ))}
-        </Menu>
+        <Menu />
         <ThemeToggle />
         {hideable && (
           <div

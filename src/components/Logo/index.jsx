@@ -1,4 +1,5 @@
 import { Transition } from "react-transition-group";
+import { NavLink } from "react-router-dom";
 import classNames from "classnames";
 import "./index.css";
 
@@ -6,7 +7,7 @@ const Logo = () => {
   return (
     <Transition in timeout={300}>
       {(status) => (
-        <div className={classNames("logo", `logo--${status}`)}>
+        <NavLink className={classNames("logo", `logo--${status}`)} to="/">
           <svg
             aria-hidden
             className="logo__svg"
@@ -20,7 +21,7 @@ const Logo = () => {
             />
           </svg>
           <h4 className="logo__title">Lambda</h4>
-        </div>
+        </NavLink>
       )}
     </Transition>
   );
