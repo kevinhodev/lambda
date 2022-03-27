@@ -1,22 +1,27 @@
 export const menuData = [
   {
     icon: "menu",
-    text: "Dashboard"
+    text: "Dashboard",
+    href: "/dashboard"
   },
   {
     icon: "cash",
-    text: "Vendas"
+    text: "Vendas",
+    href: "/sales"
   },
   {
     icon: "reader",
-    text: "Cadastro"
+    text: "Cadastro",
+    href: "/record"
   },
   {
     icon: "statsChart",
-    text: "Relatório"
+    text: "Relatório",
+    href: "/report"
   },
   {
     icon: "settings",
-    text: "Configuração"
+    text: "Configuração",
+    href: "/settings"
   }
 ];

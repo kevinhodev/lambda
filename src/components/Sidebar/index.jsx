@@ -56,7 +56,12 @@ const Sidebar = ({ hideable = true }) => {
         <Logo />
         <Menu>
           {menuData.map((item) => (
-            <MenuItem key={item.text} text={item.text} icon={item.icon} />
+            <MenuItem
+              key={item.text}
+              text={item.text}
+              icon={item.icon}
+              href={item.href}
+            />
           ))}
         </Menu>
         <ThemeToggle />

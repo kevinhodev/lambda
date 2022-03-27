@@ -32,3 +32,24 @@ body {
   transition-delay: var(--durationXS);
   opacity: 1;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: calc(100% - var(--space5XL) * 1.5);
+  height: calc(100% - var(--space4XL));
+  margin-left: calc(var(--space5XL) * 1.5);
+  margin-top: var(--space4XL);
+  padding-top: var(--spaceL);
+  z-index: 0;
+}
+
+@media (max-width: 696px) {
+  .content {
+    width: calc(100% - var(--space3XL));
+    margin-left: var(--space3XL);
+    margin-right: 0;
+  }
+}

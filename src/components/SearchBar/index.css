@@ -8,6 +8,7 @@
   color: var(--text);
   background-color: var(--secondary);
   height: calc(var(--spaceXL) * 1.2);
+  width: calc(var(--space5XL) * 2.4);
   padding: 0 var(--spaceS);
 }
 

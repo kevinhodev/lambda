@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { ReactComponent as Menu } from "../../assets/icons/menu.svg";
 import { ReactComponent as Cash } from "../../assets/icons/cash.svg";
 import { ReactComponent as Reader } from "../../assets/icons/reader.svg";
@@ -25,9 +26,9 @@ const MenuItem = ({
   return (
     <Component className="menu__item" {...rest}>
       <Icon className="menu__item-icon" />
-      <a className="menu__item-link" href={href}>
+      <NavLink to={href} className="menu__item-link">
         {text}
-      </a>
+      </NavLink>
     </Component>
   );
 };
