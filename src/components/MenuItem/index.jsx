@@ -24,9 +24,9 @@ const MenuItem = ({
   const Icon = icons[icon] || null;
 
   return (
-    <Component className="menu__item" {...rest}>
+    <Component className="menu__item">
       <Icon className="menu__item-icon" />
-      <NavLink to={href} className="menu__item-link">
+      <NavLink to={href} className="menu__item-link" {...rest}>
         {text}
       </NavLink>
     </Component>

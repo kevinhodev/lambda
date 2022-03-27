@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Logo from "../Logo";
 import Menu from "../Menu";
 import MenuItem from "../MenuItem";
@@ -15,6 +16,8 @@ const Sidebar = ({ hideable = true }) => {
   const sidebarRef = useRef();
   const previousTouchOffsetX = useRef(0);
   const touchOffsetX = useRef(0);
+
+  const location = useLocation();
 
   const moveSidebar = (sidebar, event) => {
     const style = getComputedStyle(sidebar);
@@ -46,6 +49,11 @@ const Sidebar = ({ hideable = true }) => {
       );
   }, [hideable]);
 
+  const isMatch = (pathname) => {
+    if (!pathname) return false;
+    return pathname === location.pathname;
+  };
+
   return (
     <>
       {hideable && <div className="touch-area" ref={touchAreaRef}></div>}
@@ -57,6 +65,7 @@ const Sidebar = ({ hideable = true }) => {
         <Menu>
           {menuData.map((item) => (
             <MenuItem
+              aria-current={isMatch(item.href) ? "page" : ""}
               key={item.text}
               text={item.text}
               icon={item.icon}

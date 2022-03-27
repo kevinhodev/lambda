@@ -30,7 +30,8 @@
 }
 
 .menu__item:hover::after,
-.menu__item:active::after {
+.menu__item:active::after,
+.menu__item:active:focus {
   transform: scaleX(1);
   transform-origin: top;
 }
@@ -42,12 +43,17 @@
 }
 
 .menu__item:hover .menu__item-icon,
-.menu__item:active .menu__item-icon {
+.menu__item:active .menu__item-icon,
+.menu__item:focus .menu__item-icon {
   color: var(--accent);
 }
 
 .menu__item-link {
   color: var(--text);
+}
+
+.menu__item-link[aria-current="page"] {
+  color: var(--accent);
 }
 
 @media (max-width: 696px) {
