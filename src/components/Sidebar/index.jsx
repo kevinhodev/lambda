@@ -30,6 +30,8 @@ const Sidebar = ({ hideable = true }) => {
         0
       )}px)`;
     }
+
+    matrix.m41 === 0 && setOpen(true);
   };
 
   const closeSidebar = (sidebar) => {

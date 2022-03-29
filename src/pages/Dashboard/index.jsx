@@ -5,7 +5,19 @@ import "./index.css";
 const Dashboard = () => {
   return (
     <section className="dashboard-section">
-      <StatsChart width="65%" height="50%" data={data} options={options} />
+      <div className="dashboard__welcome">
+        <h1 className="dashboard__welcome-title">Olá, Kevin!</h1>
+        <p className="dashboard__welcome-info">
+          Hoje, a efeciência geral é de <span>153%</span>. Fora isso, nenhuma
+          novidade hoje.
+        </p>
+      </div>
+      <div className="dashboard__chart-sales">
+        <div className="dashboard__chart-sales__menu">
+          <h3 className="chart-sales__label">Número de vendas</h3>
+        </div>
+        <StatsChart width="100%" data={data} options={options} />
+      </div>
     </section>
   );
 };
