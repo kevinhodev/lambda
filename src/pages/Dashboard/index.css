@@ -15,35 +15,43 @@
   margin-top: var(--spaceS);
 }
 
+.dashboard__component {
+  display: flex;
+  justify-content: center;
+}
+
 .dashboard__chart-sales {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: var(--secondary);
   border-radius: var(--spaceS);
   padding: var(--spaceS);
-  max-width: 40%;
+  width: 45%;
 }
 
 @media (max-width: 1480px) {
   .dashboard__chart-sales {
-    max-width: 65%;
+    width: 65%;
   }
 }
 
 @media (max-width: 1060px) {
   .dashboard__chart-sales {
-    max-width: 100%;
+    width: 100%;
   }
 }
 
 @media (max-width: 696px) {
   .dashboard__chart-sales {
-    max-width: 100%;
+    width: 100%;
   }
 }
 
 .dashboard__chart-sales__menu {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   padding: var(--spaceM) var(--spaceL);
   border-bottom: 1px solid var(--text);
@@ -53,4 +61,12 @@
   color: var(--text);
   font-size: 0.95rem;
   font-weight: 400;
+}
+
+.chart-sales__select {
+  outline: 0;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--accent);
 }

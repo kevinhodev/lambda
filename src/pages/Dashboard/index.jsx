@@ -12,11 +12,18 @@ const Dashboard = () => {
           novidade hoje.
         </p>
       </div>
-      <div className="dashboard__chart-sales">
-        <div className="dashboard__chart-sales__menu">
-          <h3 className="chart-sales__label">Número de vendas</h3>
+      <div className="dashboard__component">
+        <div className="dashboard__chart-sales">
+          <div className="dashboard__chart-sales__menu">
+            <h3 className="chart-sales__label">Número de vendas</h3>
+            <select className="chart-sales__select">
+              <option>Anual</option>
+              <option>Mensal</option>
+              <option>Diário</option>
+            </select>
+          </div>
+          <StatsChart width="100%" data={data} options={options} />
         </div>
-        <StatsChart width="100%" data={data} options={options} />
       </div>
     </section>
   );
