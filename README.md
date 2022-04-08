@@ -2,7 +2,7 @@
 
 <!---Esses são exemplos. Veja https://shields.io para outras pessoas ou para personalizar este conjunto de escudos. Você pode querer incluir dependências, status do projeto e informações de licença aqui--->
 
-![image](https://user-images.githubusercontent.com/11366871/162232496-8c431d43-3507-47c9-8335-7b3bae0201e4.png)
+![image](https://user-images.githubusercontent.com/11366871/162341261-39c48f41-feba-4536-a430-6e2f41ad3003.png)
 
 > Aplicação para contrelo de estoque, fuxo de caixa, etc com uma interface moderna.
 
